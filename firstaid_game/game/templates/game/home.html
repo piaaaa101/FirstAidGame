@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>First Aid Heroes - Home</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'game/style.css' %}">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+        .video-bg {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        .overlay {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; /* top alignment */
+            align-items: center;
+            height: 100%;
+            padding-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <video class="video-bg" autoplay muted ppcloop>
+        <source src="{% static 'videos/ambulance.mp4' %}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="overlay">
+        <div class="container">
+            <h1 style="color: black;">🚑 Welcome to First Aid Heroes!</h1>
+            <p style="color: black;">Select your first mission:</p>
+            <a href="/scenario/1/" class="button">🩹 Start Knee Knockdown</a>
+            <a href="/scenario/2/" class="button">🌡️ Start Fever Frenzy</a>
+            <a href="/scenario/3/" class="button">🔥 Start Burn Emergency</a>
+        </div>
+    </div>
+</body>
+</html>

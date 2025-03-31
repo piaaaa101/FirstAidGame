@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Knee Knockdown Drag Game</title>
+    {% load static %}
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.60.0/dist/phaser.min.js"></script>
+    <script type="module" src="{% static 'game/js/main.js' %}"></script>
+    <style>
+        #game-container {
+            width: 800px;
+            height: 600px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <h2 style="text-align: center;">🩹 Treat the Injury: Knee Knockdown</h2>
+    <div id="game-container"></div>
+</body>
+</html>
