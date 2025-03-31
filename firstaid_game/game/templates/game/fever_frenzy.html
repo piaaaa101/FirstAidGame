@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fever Frenzy</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'game/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>🌡️ Mission: Fever Frenzy</h1>
+        <p>Your friend looks tired and warm. What should you do first?</p>
+
+        <a class="button" href="/scenario/2/answer/1/">1. Ask how they feel</a><br>
+        <a class="button" href="/scenario/2/answer/2/">2. Give them water</a><br>
+        <a class="button" href="/scenario/2/answer/3/">3. Tell them to go to bed</a><br><br>
+
+        {% if request.session.message %}
+            <p>{{ request.session.message }}</p>
+        {% endif %}
+
+        <p><strong>Your Score:</strong> {{ request.session.score }}</p>
+
+        <a class="button" href="/">🏠 Back to Home</a>
+    </div>
+</body>
+</html>
