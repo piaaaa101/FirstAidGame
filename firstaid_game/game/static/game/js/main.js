@@ -2,11 +2,15 @@ import KneeKnockdownScene from './KneeKnockdownScene.js';
 
 const config = {
     type: Phaser.AUTO,
-    width: 800,
-    height: 600,
+    scale: {
+        mode: Phaser.Scale.RESIZE,  // Makes canvas fill window
+        autoCenter: Phaser.Scale.CENTER_BOTH
+    },
+    width: window.innerWidth,
+    height: window.innerHeight,
     scene: [KneeKnockdownScene],
-    parent: 'game-container'
+    parent: 'game-container',
+    backgroundColor: '#ffffff'
 };
 
-const game = new Phaser.Game(config);
-
+new Phaser.Game(config);
